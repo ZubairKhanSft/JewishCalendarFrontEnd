@@ -110,6 +110,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 function Homepage() {
   const [data, setData] = React.useState([]);
+  const [dataBanner, setBannerData] = React.useState([]);
   const [value, setValue] = React.useState("");
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [open, setOpen] = React.useState(false);
@@ -119,6 +120,7 @@ function Homepage() {
   const navigate = useNavigate();
   React.useEffect(() => {
     loadAdv();
+    loadBanner();
   }, []);
 
   const handleResponse = () => {
@@ -131,6 +133,15 @@ function Homepage() {
     );
     setData(result.data);
   };
+
+  const loadBanner = async () => {
+    const result = await axios.get(
+      `${BASE_URL}/api/Banner/Get-Current-Banner`
+    );
+    setBannerData(result.data);
+    console.log(result.data,"bannercheck");
+  };
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -542,17 +553,12 @@ function Homepage() {
               )}
 
               <Grid xs={12} lg={12} md={2} sx={{ paddingTop: 1 }}>
-                {data.map((item) => {
-                  console.log("item--bg>", JSON.stringify(item, null, 2));
-                  return item?.type === "BG3" ? (
-                    <Image
-                      src={`${BASE_URL + "/" + item.imagePath}`}
-                      onClick={() =>
-                        window.open(bannerUrl + item.businessUrl, "_blank")
-                      }
-                    />
-                  ) : null;
-                })}
+                {
+                   <Image src={`${BASE_URL + dataBanner.bannerImage}`}/>
+                  //  {`${BASE_URL + "/" + item.imagePath}`}
+               
+                }
+               
               </Grid>
 
               <Grid
@@ -718,7 +724,11 @@ function Homepage() {
               })}
               <Grid sx={{ padding: "30px 10px" }}></Grid>
             </Grid>
+        
+        
           </Grid>
+      
+      
         </Grid>
       </Grid>
     </>
