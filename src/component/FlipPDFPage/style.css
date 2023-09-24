@@ -1,0 +1,107 @@
+
+  
+  @font-face {
+    font-family: TitrBold;
+    src: url('../../assests/fonts/titr-bold.woff');
+ }
+ @font-face {
+  font-family: BBCNassim;
+  src: url('../../assests/fonts/bbcnassim-bold.woff');
+}
+  
+  /* .react-pdf__Document {
+    display: inline-block;
+  } */
+  
+  /* .react-pdf__Page {
+    width: 300px;
+    height: 524px;
+  } */
+
+  section.linkAnnotation,
+  .react-pdf_Page_annotations .annotationLayer,
+  .react-pdf_Page_textContent,
+  .react-pdf_Page_textContent .textLayer,
+  .annotationLayer,.react-pdf__Page__textContent.textLayer{
+    display: none !important;
+  }
+
+  .react-pdf__Page__canvas{
+    /* margin: 0 auto; */
+    /* width: 100% !important;
+    max-width: 100% !important; */
+    height: auto !important;
+    cursor: pointer;
+  }
+  
+
+  .pdf_search input{
+    margin: 15px ;
+    height: 35px;
+    width:100%;
+    max-width:  350px;
+    border-radius: 10px;
+    padding: 0 20px;
+    
+    
+  }
+  .pdf_search {
+    /* margin-top: 50px ; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+.search_btn{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.index_no{
+  /* margin-top: 20px; */
+  /* margin: 20px 10px 0px 10px; */
+}
+
+span {
+  background: linear-gradient(75deg, #3B43F2, #3B8CF2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   font-weight: 800;
+   display: none;
+}
+.first_btn svg,.last_btn svg{
+font-size: 2.5rem;
+}
+@media all and (max-width:1020px){
+  .react-pdf__Page__canvas{
+    width: 100% !important;
+    max-width: 100% !important;
+    height:700px !important;
+    cursor: pointer;
+  }
+}
+
+
+.pages {
+  height: 100%;
+  width: 100%;
+}
+
+.page {
+  height: 100%;
+  width: 100%;
+  user-select: none;
+  touch-action: none;
+}
+
+.page1 {
+  background-color: pink;
+}
+
+.page2 {
+  background-color: yellow;
+}
+
+.page3 {
+  background-color: aqua;
+}
