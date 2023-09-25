@@ -18,7 +18,8 @@ const DeceasedData = () => {
 
   const loadData = async () => {
     // TODO persian eden backend
-    const response = await axios.post(`${PER_BASE_URL}/api/deceased/get-all-v1`);
+    const response = await axios.post(`${PER_BASE_URL}api/deceased/get-all-v1`);
+    //const response = await axios.post(`https://localhost:44389/api/Deceased/GetAll-V1`);
 
     setInfo(response?.data);
     setTempInfoSearch(response?.data);
@@ -84,7 +85,7 @@ const DeceasedData = () => {
       </React.Fragment>
     ));
   }
-  console.log("infoinfo", info);
+  console.warn("infoinfo", info);
 
   const SearchComp = (higlight) => {
     return (

@@ -12,7 +12,7 @@ export default function CenterImage() {
 
   const loadAdv = async () => {
     const result = await axios.get(
-      `${BASE_URL}/api/Advertisement/Get-All-Advertisements`
+      `${BASE_URL}api/Advertisement/Get-All-Advertisements`
     );
     setData(result.data);
     console.log("result-", JSON.stringify(result.data, null, 2));
