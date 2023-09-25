@@ -86,7 +86,7 @@ export default function FlipPage({ calcWidth, filePath }) {
   useEffect(() => {
     const diff = calcWidth.leftWidth + calcWidth.rightWidth || 400;
     if (width > 800) {
-      setFileWidth(width - (diff + 80));
+      setFileWidth(width - (diff + 150));
     } else {
       setFileWidth(width - 20);
     }
