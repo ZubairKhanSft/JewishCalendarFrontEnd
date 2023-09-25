@@ -92,7 +92,7 @@ const AdvertiseList = (props) => {
           sx={{
             maxHeight: { lg: "2270px", sx: "auto" },
             position: "relative",
-            // overflowY: { sx: "auto", lg: "auto" },
+             overflowY: { sx: "auto", lg: "auto" },
             height: "fit-content",
             margin: { sx: "5px", sm: "10px 0", lg: "30px 0" },
           }}
